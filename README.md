@@ -17,21 +17,21 @@ For the first and second data modalities, any samples with fewer time points tha
 All codes are compatible with Tensorflow version 2.14.0, Keras version 2.14.0 and Python 3.11.5.
 ## How to run CAAT-EHR
 To run CAAT-EHR, ensure the following files are in the same directory:
-1. CAAT-EHR.ipynb: Rpresents the implementation of the proposed model.
-2. modal1.pkl: Represents the first data modality.
-3. modal2.pkl: Represents the second data modality.
-4. target.pkl: Represents the target data to be predicted.
+1. CAAT-EHR.ipynb: The implementation of the proposed model, and its located in 'CAAT-EHR model' folder.
+2. modal1.pkl: Represents the first data modality, and its located in 'Sample of Pre-training data' folder.
+3. modal2.pkl: Represents the second data modality, and its located in 'Sample of Pre-training data' folder.
+4. target.pkl: Represents the target data to be predicted, and its located in 'Sample of Pre-training data' folder.
 
 Once all files are in the same directory, open and execute CAAT-EHR.ipynb using Jupyter Notebook. During execution, CAAT-EHR will be pre-trained, and the encoder portion of the model will be saved as a Keras model. This saved encoder can later be used to generate longitudinal embeddings for external EHR data.
 ***Note:*** The external EHR data should have the same number of data modalities as those used during the pre-training phase.
 ## How to generate embeddings for an external data
 To generate embeddings for external data, ensure that the external EHR data has the same number of data modalities as those used during the pre-training phase and follows the format described in the dataset section. To proceed, make sure the following files are in the same directory:
-1. Generate_embeddings.ipynb: The script for generating embeddings.
-2. transformer_encoder.keras: The pre-trained encoder model.
-3. external_modal1.pkl: Represents the first data modality.
-4. external_modal2.pkl: Represents the second data modality.
+1. Generate_embeddings.ipynb: The script for generating embeddings, and its located in 'Generating embeddings' folder.
+2. transformer_encoder.keras: The pre-trained encoder model, and its located in 'Generating embeddings' folder.
+3. external_modal1.pkl: Represents the first data modality, and its located in 'Samples of external data' folder.
+4. external_modal2.pkl: Represents the second data modality, and its located in 'Samples of external data' folder.
 
 Once all files are in place, open and execute Generate_embeddings.ipynb using Jupyter Notebook. Upon completion, the generated embeddings will be structured as (number of samples, maximum number of time points, embedding size) and saved as a pickle file.
 These embeddings are now longitudinal and task-agnostic and can be fed into any sequential model such as an RNN or Transformer or even aggregated to be used with models like MLP, Random Forest (RF), or Support Vector Machine (SVM) for downstream tasks.
 
-
+***Note:*** The pre-training and external data provided in this repository were randomly created .
