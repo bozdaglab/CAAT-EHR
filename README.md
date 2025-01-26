@@ -1,5 +1,6 @@
 # CAAT-EHR: Cross-Attentional Autoregressive Transformer for Multimodal Electronic Health Record Embeddings
 CAAT-EHR, a novel architecture designed to generate robust, task-agnostic longitudinal embeddings from raw EHR data. CAAT-EHR leverages self- and cross-attention mechanisms in its encoder to integrate temporal and contextual relationships across multiple modalities, transforming the data into enriched embeddings that capture complex dependencies. An autoregressive decoder complements the encoder by predicting future time points data during pre-training, ensuring that the resulting embeddings maintain temporal consistency and alignment. CAAT-EHR eliminates the need for manual feature engineering and enables seamless transferability across diverse downstream tasks.
+![CAAT-EHR](https://github.com/bozdaglab/CAAT-EHR/blob/main/Images/CAAT-EHR.png?raw=true)
 ## Dataset and input format
 CAAT-EHR was pre-trained independently on two datasets. The first dataset, the Alzheimer’s Disease Neuroimaging Initiative (ADNI), includes two longitudinal modalities: cognitive measurements and MRI data. The second dataset, the Medical Information Mart for Intensive Care (MIMIC-III), includes two longitudinal modalities: continuous data and categorical data.
 - To access the ADNI dataset, you need to request access through https://adni.loni.usc.edu/
