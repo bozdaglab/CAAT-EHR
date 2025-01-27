@@ -7,7 +7,7 @@ CAAT-EHR was pre-trained independently on two datasets. The first dataset, the A
 - To access the ADNI dataset, you need to request access through https://adni.loni.usc.edu/
 - To access the MIMIC-III, you need to request access through https://mimic.mit.edu/docs/gettingstarted/
 
-For preprocessing details of the ADNI dataset, please refer to [PPAD](https://academic.oup.com/bioinformatics/article/39/Supplement_1/i149/7210436). For preprocessing details of the MIMIC-III dataset, please refer to [Multitask learning and benchmarking with clinical time series data](https://www.nature.com/articles/s41597-019-0103-9).
+For preprocessing details of the ADNI dataset, please refer to [PPAD's paper](https://academic.oup.com/bioinformatics/article/39/Supplement_1/i149/7210436) or visit the [PPAD GitHub repository](https://github.com/bozdaglab/PPAD). For preprocessing details of the MIMIC-III dataset, please refer to [Multitask learning and benchmarking with clinical time series data](https://www.nature.com/articles/s41597-019-0103-9) or visit the [Zenodo repository](https://zenodo.org/records/1306527).
 For pre-training, the dataset was partitioned into input features and prediction targets. In time series EHR data with 𝑇 time points (visits), the data from the first time point (visit) to 𝑇 – 2 were used as input features, while data from 𝑇 − 2 to the last time point served as prediction targets. The CAAT-EHR model was trained to predict the target data based on the input features.
 To conduct pre-training for CAAT-EHR, three inputs representing the same samples are required:
 1. The first data modality, structured as (number of samples, maximum number of time points, number of features for the first data modality).
